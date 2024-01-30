@@ -1,2 +1,1 @@
 # tdd-yatzy
-# tdd-yatzy
