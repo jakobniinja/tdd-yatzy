@@ -149,4 +149,60 @@ public class Yatzy {
 
     return total;
   }
+
+  public int scorePair(int d, int d1, int d2, int d3, int d4) {
+    int[] counts = countSameDice(d, d1, d2, d3, d4);
+
+    int at;
+    for (at = 0; at != 6; at++) {
+      if (counts[6 - at - 1] >= 2) {
+        return (6 - at) * 2;
+      }
+    }
+    return 0;
+  }
+
+  public int scoreTwoPair(int d, int d1, int d2, int d3, int d4) {
+
+    int[] counts = countSameDice(d, d1, d2, d3, d4);
+
+    int n = 0;
+    int score = 0;
+
+    for (int i = 0; i < 6; i++) {
+      if (counts[6 - i - 1] >= 2) {
+        n++;
+        score += (6 - i);
+      }
+
+    }
+    if (n == 2) {
+      return score * 2;
+    }
+
+    return 0;
+  }
+
+  public int fourOfAKind(int d, int d1, int d2, int d3, int d4) {
+    int[] counts = countSameDice(d, d1, d2, d3, d4);
+
+    for (int i = 0; i < 6; i++) {
+      if (counts[i] >= 4) {
+        return (i + 1) * 4;
+      }
+    }
+    return 0;
+  }
+
+  public int[] countSameDice(int d, int d1, int d2, int d3, int d4) {
+    int[] counts = new int[6];
+
+    counts[d - 1]++;
+    counts[d1 - 1]++;
+    counts[d2 - 1]++;
+    counts[d3 - 1]++;
+    counts[d4 - 1]++;
+
+    return counts;
+  }
 }
