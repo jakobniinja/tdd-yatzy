@@ -190,4 +190,88 @@ public class YatzyTest {
     yatzy = new Yatzy(1, 2, 3, 3, 5);
     assertEquals(0, yatzy.fours());
   }
+
+  @Test
+  public void onYatzyCountFivesZero(){
+    yatzy = new Yatzy(1, 2, 3, 4, 4);
+
+    assertEquals(0, yatzy.fives());
+  }
+
+  @Test
+  public void onYatzyCountFivesOne(){
+    yatzy = new Yatzy(1, 2, 3, 4, 5);
+
+    assertEquals(5, yatzy.fives());
+  }
+
+  @Test
+  public void onYatzyCountFivesTwo(){
+    yatzy = new Yatzy(1, 2, 5, 4, 5);
+
+    assertEquals(10, yatzy.fives());
+  }
+
+  @Test
+  public void onYatzyCountFivesThree(){
+    yatzy = new Yatzy(1, 2, 5, 5, 5);
+
+    assertEquals(15, yatzy.fives());
+  }
+
+  @Test
+  public void onYatzyCountFivesFour(){
+    yatzy = new Yatzy(1, 5, 5, 5, 5);
+
+    assertEquals(20, yatzy.fives());
+  }
+
+  @Test
+  public void onYatzyCountFivesFive(){
+    yatzy = new Yatzy(5, 5, 5, 5, 5);
+
+    assertEquals(25, yatzy.fives());
+  }
+
+  @Test
+  public void onYatzyCountSixZero(){
+    yatzy = new Yatzy(1, 5, 5, 5, 5);
+
+    assertEquals(0, yatzy.sixes());
+  }
+
+
+  @Test
+  public void onYatzyCountSixOne(){
+    yatzy = new Yatzy(6, 5, 5, 5, 5);
+
+    assertEquals(6, yatzy.sixes());
+  }
+  @Test
+  public void onYatzyCountSixTwo(){
+    yatzy = new Yatzy(6, 6, 5, 5, 5);
+
+    assertEquals(12, yatzy.sixes());
+  }
+
+  @Test
+  public void onYatzyCountSixThree(){
+    yatzy = new Yatzy(6, 6, 5, 5, 6);
+
+    assertEquals(18, yatzy.sixes());
+  }
+
+  @Test
+  public void onYatzyCountSixFour(){
+    yatzy = new Yatzy(6, 6, 5, 6, 6);
+
+    assertEquals(24, yatzy.sixes());
+  }
+
+  @Test
+  public void onYatzyCountSixFive(){
+    yatzy = new Yatzy(6, 6, 6, 6, 6);
+
+    assertEquals(30, yatzy.sixes());
+  }
 }

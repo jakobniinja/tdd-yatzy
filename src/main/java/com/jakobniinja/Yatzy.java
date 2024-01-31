@@ -96,7 +96,7 @@ public class Yatzy {
   }
 
   public int threes(int d, int d1, int d2, int d3, int d4) {
-    int total =0;
+    int total = 0;
     if (d == 3) {
       total += 3;
     }
@@ -110,20 +110,43 @@ public class Yatzy {
       total += 3;
     }
     if (d4 == 3) {
-      total+=3;
+      total += 3;
     }
     return total;
   }
 
   public int fours() {
 
-    int sum =0;
-    for (int i = 0; i !=5; i++) {
+    int sum = 0;
+    for (int i = 0; i != 5; i++) {
       if (dices[i] == 4) {
         sum += 4;
       }
     }
 
     return sum;
+  }
+
+  public int fives() {
+    int total = 0;
+
+    for (int die : dices) {
+      if (die == 5) {
+        total += 5;
+      }
+    }
+
+    return total;
+  }
+
+  public int sixes() {
+    int total = 0;
+    for (int die : dices) {
+      if (die == 6) {
+        total += 6;
+      }
+    }
+
+    return total;
   }
 }
