@@ -131,6 +131,11 @@ public class YatzyTest {
   }
 
   @Test
+  public void onYatzyCountTwosFoundZero() {
+    assertEquals(0, yatzy.twos(0, 3, 3, 3, 3));
+  }
+
+  @Test
   public void onYatzyCountTwosFoundOne() {
     assertEquals(2, yatzy.twos(2, 3, 3, 3, 3));
   }
@@ -189,6 +194,12 @@ public class YatzyTest {
   public void onNoFoursSumIsZero() {
     yatzy = new Yatzy(1, 2, 3, 3, 5);
     assertEquals(0, yatzy.fours());
+  }
+
+  @Test
+  public void onFourFours() {
+    yatzy = new Yatzy(1, 4, 4, 4, 4);
+    assertEquals(16, yatzy.fours());
   }
 
   @Test
@@ -299,19 +310,19 @@ public class YatzyTest {
   }
 
   @Test
-  public void onForeOfAKindZero(){
-    assertEquals(0, yatzy.fourOfAKind(1,2,3,4,5));
+  public void onForeOfAKindZero() {
+    assertEquals(0, yatzy.fourOfAKind(1, 2, 3, 4, 5));
   }
 
 
   @Test
-  public void onForeOfAKindOne(){
-    assertEquals(4, yatzy.fourOfAKind(1,2,1,1,1));
+  public void onForeOfAKindOne() {
+    assertEquals(4, yatzy.fourOfAKind(1, 2, 1, 1, 1));
   }
 
 
   @Test
-  public void onForeOfAKindFour(){
-    assertEquals(16, yatzy.fourOfAKind(4,2,4,4,4));
+  public void onForeOfAKindFour() {
+    assertEquals(16, yatzy.fourOfAKind(4, 2, 4, 4, 4));
   }
 }
