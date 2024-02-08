@@ -325,4 +325,19 @@ public class YatzyTest {
   public void onForeOfAKindFour() {
     assertEquals(16, yatzy.fourOfAKind(4, 2, 4, 4, 4));
   }
+
+  @Test
+  public void onNoSmallStraight() {
+    assertEquals(0, yatzy.smallStraight(1, 3, 4, 2, 4));
+  }
+
+  @Test
+  public void onFirst3SmallStraight(){
+    assertEquals(0, yatzy.smallStraight(1, 2, 3, 2, 4));
+  }
+
+  @Test
+  public void onSmallStraight(){
+    assertEquals(15, yatzy.smallStraight(1, 2, 3, 4, 6));
+  }
 }
