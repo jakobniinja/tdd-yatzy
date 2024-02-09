@@ -2,6 +2,7 @@ package com.jakobniinja;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -332,12 +333,43 @@ public class YatzyTest {
   }
 
   @Test
-  public void onFirst3SmallStraight(){
+  public void onFirst3SmallStraight() {
     assertEquals(0, yatzy.smallStraight(1, 2, 3, 2, 4));
   }
 
   @Test
-  public void onSmallStraight(){
+  public void onSmallStraight() {
     assertEquals(15, yatzy.smallStraight(1, 2, 3, 4, 6));
   }
+
+  @Test
+  public void onFirst3BigStraight() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 4, 2));
+  }
+
+  @Test
+  public void onBigStraight() {
+    assertEquals(20, yatzy.bigStraight(1, 2, 3, 4, 5));
+  }
+
+  @Test
+  public void onFullHouse() {
+    assertEquals(0, yatzy.fullHouse(1, 2, 2, 3, 4));
+  }
+
+  @Test
+  public void onFullHouseStartSize6() {
+    yatzy.fullHouse(1, 2, 3, 3, 4);
+
+    assertEquals(6, yatzy.getTallies());
+  }
+
+  @Test
+  public void onFullHouseHasPair() {
+    yatzy.fullHouse(1, 1, 3, 2, 4 );
+
+    assertTrue(yatzy.hasOnePair());
+
+  }
+
 }
