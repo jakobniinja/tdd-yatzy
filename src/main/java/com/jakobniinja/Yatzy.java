@@ -6,6 +6,8 @@ public class Yatzy {
 
   private boolean pair;
 
+  private boolean threeOfSameDice;
+
   public Yatzy() {
     //
   }
@@ -248,6 +250,11 @@ public class Yatzy {
 
     tallies[d - 1] += 1;
     tallies[d1 - 1] += 1;
+    tallies[d2 - 1] += 1;
+    tallies[d3 - 1] += 1;
+    tallies[d4 - 1] += 1;
+
+    threeOfSameDice = false;
 
     int[] counts = countSameDice(d, d1, d2, d3, d4);
 
@@ -258,14 +265,29 @@ public class Yatzy {
       }
     }
 
+    for (int i = 0; i < 6; i++) {
+      if (counts[i] == 3) {
+        threeOfSameDice = true;
+        break;
+      }
+    }
+
+    if (threeOfSameDice && pair) {
+      return 25;
+    }
+
     return 0;
   }
 
-  public int getTallies() {
+  protected  int getTallies() {
     return tallies.length;
   }
 
-  public boolean hasOnePair() {
+  protected  boolean hasOnePair() {
     return pair;
+  }
+
+  protected boolean threeOfAnyKind() {
+    return threeOfSameDice;
   }
 }

@@ -366,10 +366,22 @@ public class YatzyTest {
 
   @Test
   public void onFullHouseHasPair() {
-    yatzy.fullHouse(1, 1, 3, 2, 4 );
+    yatzy.fullHouse(1, 1, 3, 2, 4);
 
     assertTrue(yatzy.hasOnePair());
-
   }
 
+
+  @Test
+  public void onFullHouseHasThreeOfAnyKind() {
+    yatzy.fullHouse(4, 2, 3, 3, 3);
+
+    assertTrue(yatzy.threeOfAnyKind());
+  }
+
+
+  @Test
+  public void onPlayerHasFullHouse() {
+    assertEquals(25, yatzy.fullHouse(4, 4, 3, 3, 4));
+  }
 }
