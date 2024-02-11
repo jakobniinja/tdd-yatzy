@@ -327,6 +327,47 @@ public class YatzyTest {
     assertEquals(16, yatzy.fourOfAKind(4, 2, 4, 4, 4));
   }
 
+
+  @Test
+  public void onSmallStraightNo1s() {
+    assertEquals(0, yatzy.smallStraight(3, 3, 4, 2, 4));
+  }
+
+  @Test
+  public void onSmallStraightOne1() {
+    assertEquals(0, yatzy.smallStraight(1, 3, 4, 2, 4));
+  }
+
+  @Test
+  public void onSmallStraightNo2s() {
+    assertEquals(0, yatzy.smallStraight(1, 4, 3, 3, 3));
+  }
+
+  @Test
+  public void onSmallStraightOne2() {
+    assertEquals(0, yatzy.smallStraight(1, 2, 3, 3, 3));
+  }
+
+  @Test
+  public void onSmallStraightNo3s() {
+    assertEquals(0, yatzy.smallStraight(1, 2, 1, 1, 4));
+  }
+
+  @Test
+  public void onSmallStraightOne3() {
+    assertEquals(0, yatzy.smallStraight(1, 2, 3, 1, 4));
+  }
+
+  @Test
+  public void onSmallStraightOne4() {
+    assertEquals(0, yatzy.smallStraight(1, 2, 3, 4, 2));
+  }
+
+  @Test
+  public void onSmallStraightNo4() {
+    assertEquals(0, yatzy.smallStraight(1, 2, 3, 1, 2));
+  }
+
   @Test
   public void onNoSmallStraight() {
     assertEquals(0, yatzy.smallStraight(1, 3, 4, 2, 4));
@@ -342,9 +383,70 @@ public class YatzyTest {
     assertEquals(15, yatzy.smallStraight(1, 2, 3, 4, 6));
   }
 
+
+  @Test
+  public void onBigStraightNo1s() {
+    assertEquals(0, yatzy.bigStraight(3, 3, 4, 2, 4));
+  }
+
+  @Test
+  public void onBigStraightOne1() {
+    assertEquals(0, yatzy.bigStraight(1, 3, 4, 2, 4));
+  }
+
+  @Test
+  public void onBigStraightNo2s() {
+    assertEquals(0, yatzy.bigStraight(1, 4, 3, 3, 3));
+  }
+
+  @Test
+  public void onBigStraightOne2() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 3, 3));
+  }
+
+  @Test
+  public void onBigStraightNo3s() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 1, 1, 4));
+  }
+
+  @Test
+  public void onBigStraightOne3() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 1, 4));
+  }
+
+  @Test
+  public void onBigStraightNo4() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 1, 2));
+  }
+
+  @Test
+  public void onBigStraightOne4() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 4, 3));
+  }
+
+  @Test
+  public void onBigStraightOne5() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 1, 5));
+  }
+
+  @Test
+  public void onBigStraightNo5() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 1, 2));
+  }
+
+  @Test
+  public void onBigStraightFive6() {
+    assertEquals(0, yatzy.bigStraight(6, 6, 6, 6, 6));
+  }
+
   @Test
   public void onFirst3BigStraight() {
     assertEquals(0, yatzy.bigStraight(1, 2, 3, 4, 2));
+  }
+
+  @Test
+  public void onBigStraightEnd() {
+    assertEquals(0, yatzy.bigStraight(1, 2, 3, 4, 6));
   }
 
   @Test

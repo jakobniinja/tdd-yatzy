@@ -279,11 +279,11 @@ public class Yatzy {
     return 0;
   }
 
-  protected  int getTallies() {
+  protected int getTallies() {
     return tallies.length;
   }
 
-  protected  boolean hasOnePair() {
+  protected boolean hasOnePair() {
     return pair;
   }
 
