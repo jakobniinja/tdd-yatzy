@@ -1,6 +1,5 @@
 # tdd-yatzy
 
 ## Lessons
-on build failures - hit enter!
-find missed branch by - 5 if statements
-
+On build failures - hit enter!
+Find the missed branch!  put several if's on separate lines ;)
